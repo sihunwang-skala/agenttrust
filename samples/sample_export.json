@@ -1,0 +1,876 @@
+{
+  "gateway_key_id": "52c92d3e34c7a19a",
+  "gateway_public_key_hex": "6b9adcf92a7809e5613fd4b5c7a59aa604355a56f8616702b2d8573696e67189",
+  "mock_merchant_public_key_hex": "63ba7beccfe8b9c1b3241333b6f7f4bf5334101b208cc8410985f92dffa45e87",
+  "notice": "AgentTrust is a local research prototype. All data is synthetic/mock. No real payments. Not legal advice.",
+  "receipts": [
+    {
+      "action_parameters": {
+        "agent_id": "agent_demo",
+        "allowed_categories": [
+          "Electronics"
+        ],
+        "allowed_merchants": [
+          "m_gadgethub",
+          "m_techmart"
+        ],
+        "auto_purchase_allowed": true,
+        "max_delivery_days": 7,
+        "per_item_max_krw": 200000,
+        "require_free_returns": true,
+        "total_budget_krw": 600000,
+        "valid_for_minutes": 60
+      },
+      "agent_id": "agent_demo",
+      "current_hash": "8e1fc21bf47aa933269db7e202d96fd1ad20a51327597cf852bf38c3f0626185",
+      "delegation_id": "dlg_40977fe43a28",
+      "delegation_version": 1,
+      "event_type": "DELEGATION_APPROVED",
+      "evidence_references": [
+        {
+          "digest": "eba43ac475dbe8e5adfff39af430d048b8f86e48e0b3d464ac737237b3698d09",
+          "evidence_id": "ev_a5db5865f3",
+          "level": "GATEWAY_VERIFIED",
+          "summary": "Approval recorded by gateway on Demo Trusted Surface (unsigned by user)",
+          "type": "delegation_approval"
+        }
+      ],
+      "execution_status": "DELEGATION_ACTIVE",
+      "merchant_response": null,
+      "policy_decision": "ALLOW",
+      "policy_reason": {
+        "expires_at": "2026-11-03T16:01:33.865Z",
+        "note": "Approved on the Demo Trusted Surface. This is NOT a cryptographic signature by the user; user identity and intent are not proven."
+      },
+      "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "receipt_id": "r_2c59a36f9c5d4610",
+      "requested_action": "delegation.approve",
+      "schema_version": "agenttrust.receipt/1",
+      "seq": 1,
+      "signature": "da780d782ca4aeb1689b9b103f712430b18e181cab241b914e6fc00a8f8c02b84bcf09973fc43667a05e7fb9014173846c43bda32bbf95db2eae7c8b8ce8b009",
+      "signer_key_id": "52c92d3e34c7a19a",
+      "timestamp": "2026-11-03T15:01:33.865Z",
+      "transaction_id": null,
+      "verification_level": "GATEWAY_VERIFIED"
+    },
+    {
+      "action_parameters": {
+        "claimed": {
+          "category": null,
+          "delivery_days": null,
+          "free_returns": true,
+          "unit_price_krw": 120000
+        },
+        "merchant_id": "m_techmart",
+        "product_id": "p_headphones",
+        "quantity": 1,
+        "rationale": "User asked for headphones"
+      },
+      "agent_id": "agent_demo",
+      "current_hash": "112c6074d21c5af7905fc21c4e2458ade9622f4f8cd8359a450bf87e3215e9d0",
+      "delegation_id": "dlg_40977fe43a28",
+      "delegation_version": 1,
+      "event_type": "POLICY_DECISION",
+      "evidence_references": [
+        {
+          "digest": "d00b9e7e19a6c31c0d6c075efbf9a4059a7b755921a7d73ce43cc906514301f1",
+          "evidence_id": "ev_177f94e4d6",
+          "level": "SELF_REPORTED",
+          "summary": "Agent-supplied claims and rationale (unverified)",
+          "type": "agent_claims"
+        },
+        {
+          "digest": "8c2847c3549aa3d24d754e5c34f2a2a9f5c2023034636c355fe6090653f018c2",
+          "evidence_id": "ev_2f169275c9",
+          "level": "GATEWAY_VERIFIED",
+          "summary": "Deterministic policy checks executed by the gateway",
+          "type": "policy_evaluation"
+        },
+        {
+          "digest": "eba43ac475dbe8e5adfff39af430d048b8f86e48e0b3d464ac737237b3698d09",
+          "evidence_id": "ev_c0cad84ab6",
+          "level": "GATEWAY_VERIFIED",
+          "summary": "Delegation v1 loaded from gateway store",
+          "type": "delegation_snapshot"
+        },
+        {
+          "digest": "2ba9d23edb335e44737d62e295d61bf0dd1d412a6412ae992342b15db60c6d60",
+          "evidence_id": "ev_7e52324741",
+          "level": "MERCHANT_CONFIRMED",
+          "summary": "Merchant-signed quote verified by gateway (SIMULATED merchant)",
+          "type": "merchant_quote"
+        }
+      ],
+      "execution_status": "AUTHORIZED",
+      "merchant_response": {
+        "key_id": "ccaf608e2adc2c50",
+        "payload": {
+          "cancellable": true,
+          "category": "Electronics",
+          "delivery_days": 3,
+          "free_returns": true,
+          "issued_at": "2026-11-03T15:01:33.869Z",
+          "merchant_id": "m_techmart",
+          "name": "Wireless Headphones (synthetic)",
+          "product_id": "p_headphones",
+          "quote_id": "q_b62c10da8bd7",
+          "simulation": true,
+          "type": "quote",
+          "unit_price_krw": 120000
+        },
+        "payload_digest": "2ba9d23edb335e44737d62e295d61bf0dd1d412a6412ae992342b15db60c6d60",
+        "signature": "93fd80a71bb11f52ac6444dfb15a3e461beafac149fa6936f613004a50cab76d2f274dacfe8bc98446832bd4dc3dcc79f6fdc09e21bbae431887d9ecbfe40606"
+      },
+      "policy_decision": "ALLOW",
+      "policy_reason": {
+        "checks": [
+          {
+            "check": "delegation_valid",
+            "passed": true
+          },
+          {
+            "check": "delegation_not_expired",
+            "passed": true
+          },
+          {
+            "check": "agent_matches",
+            "passed": true
+          },
+          {
+            "check": "merchant_allowed",
+            "passed": true
+          },
+          {
+            "check": "product_found",
+            "passed": true
+          },
+          {
+            "check": "claim_unit_price_krw_consistent",
+            "passed": true
+          },
+          {
+            "check": "claim_free_returns_consistent",
+            "passed": true
+          },
+          {
+            "check": "category_allowed",
+            "passed": true
+          },
+          {
+            "check": "per_item_limit",
+            "passed": true
+          },
+          {
+            "check": "budget_remaining",
+            "passed": true
+          },
+          {
+            "check": "free_returns",
+            "passed": true
+          },
+          {
+            "check": "delivery_deadline",
+            "passed": true
+          },
+          {
+            "check": "not_duplicate",
+            "passed": true
+          }
+        ],
+        "engine": "deterministic/1",
+        "violations": []
+      },
+      "previous_hash": "8e1fc21bf47aa933269db7e202d96fd1ad20a51327597cf852bf38c3f0626185",
+      "receipt_id": "r_bfc996fe5e5744a4",
+      "requested_action": "purchase",
+      "schema_version": "agenttrust.receipt/1",
+      "seq": 2,
+      "signature": "4218e3d715028ef5251d0f2d12ef5c6a0e1abf54b6a614b496e692766f294e12dbcb386996c91597ef0652591991ec9256fc01cc35668a97f92c51b7679f4804",
+      "signer_key_id": "52c92d3e34c7a19a",
+      "timestamp": "2026-11-03T15:01:33.871Z",
+      "transaction_id": "tx_e4705e49d92c",
+      "verification_level": "MERCHANT_CONFIRMED"
+    },
+    {
+      "action_parameters": {
+        "merchant_id": "m_techmart",
+        "product_id": "p_headphones",
+        "quantity": 1
+      },
+      "agent_id": "agent_demo",
+      "current_hash": "893be6483d4a8135c1e05e752c7a041e31486c287ac3fdeaf94a1ba8c8eb9de1",
+      "delegation_id": "dlg_40977fe43a28",
+      "delegation_version": 1,
+      "event_type": "EXECUTION_RESULT",
+      "evidence_references": [
+        {
+          "digest": "6234a47d5b67cba9ce57b33e5ed06855d335889c617e5b96289b6fc889d87d9b",
+          "evidence_id": "ev_541b137208",
+          "level": "MERCHANT_CONFIRMED",
+          "summary": "Merchant-signed order confirmation (SIMULATED; not a payment confirmation)",
+          "type": "merchant_order_confirmation"
+        }
+      ],
+      "execution_status": "EXECUTED",
+      "merchant_response": {
+        "key_id": "ccaf608e2adc2c50",
+        "payload": {
+          "charged_krw": 120000,
+          "issued_at": "2026-11-03T15:01:33.872Z",
+          "merchant_id": "m_techmart",
+          "order_id": "o_7545e4b35469",
+          "product_id": "p_headphones",
+          "quantity": 1,
+          "simulation": true,
+          "status": "CONFIRMED",
+          "transaction_ref": "tx_e4705e49d92c",
+          "type": "order_confirmation"
+        },
+        "payload_digest": "6234a47d5b67cba9ce57b33e5ed06855d335889c617e5b96289b6fc889d87d9b",
+        "signature": "75535158c331a31961bf4be52b7d12b42f5b62eadb12af29ac80f235f683f20f28ef799bc5b4a6bf5807379c104e5eef37015097d0253cc14aa797467c3acc0c"
+      },
+      "policy_decision": "ALLOW",
+      "policy_reason": {
+        "discrepancies": []
+      },
+      "previous_hash": "112c6074d21c5af7905fc21c4e2458ade9622f4f8cd8359a450bf87e3215e9d0",
+      "receipt_id": "r_f1ea521c4efe4866",
+      "requested_action": "purchase",
+      "schema_version": "agenttrust.receipt/1",
+      "seq": 3,
+      "signature": "3911c7ca53faec295236b92c6697ca8fab07498da8a05b40f557036bcfe14ef4ae27ebf13939ea5b3d087e8f145047e3b88bd35c903fc6985d8c6074d234350b",
+      "signer_key_id": "52c92d3e34c7a19a",
+      "timestamp": "2026-11-03T15:01:33.872Z",
+      "transaction_id": "tx_e4705e49d92c",
+      "verification_level": "MERCHANT_CONFIRMED"
+    },
+    {
+      "action_parameters": {
+        "claimed": {
+          "category": null,
+          "delivery_days": null,
+          "free_returns": null,
+          "unit_price_krw": null
+        },
+        "merchant_id": "m_techmart",
+        "product_id": "p_webcam",
+        "quantity": 1,
+        "rationale": "Cheapest webcam"
+      },
+      "agent_id": "agent_demo",
+      "current_hash": "75182b5729c08176aef0b057b9e3f6d8598f6cfd5f6726edb94fff19b0c8d7be",
+      "delegation_id": "dlg_40977fe43a28",
+      "delegation_version": 1,
+      "event_type": "POLICY_DECISION",
+      "evidence_references": [
+        {
+          "digest": "39f84413238edb2f14e7419bc71a48239df1a5376f9046ca7122c487e04af786",
+          "evidence_id": "ev_1b6cf4a097",
+          "level": "SELF_REPORTED",
+          "summary": "Agent-supplied claims and rationale (unverified)",
+          "type": "agent_claims"
+        },
+        {
+          "digest": "89acdb3e65be0d828160a1f5275243cabc478b074a98ff2a889812b66edc1586",
+          "evidence_id": "ev_61db882106",
+          "level": "GATEWAY_VERIFIED",
+          "summary": "Deterministic policy checks executed by the gateway",
+          "type": "policy_evaluation"
+        },
+        {
+          "digest": "eba43ac475dbe8e5adfff39af430d048b8f86e48e0b3d464ac737237b3698d09",
+          "evidence_id": "ev_7f7f187e16",
+          "level": "GATEWAY_VERIFIED",
+          "summary": "Delegation v1 loaded from gateway store",
+          "type": "delegation_snapshot"
+        },
+        {
+          "digest": "aae9e33038c3caf29a1d3de6f0994aee3ffb323bacda414bb4dcd6d30b3263a6",
+          "evidence_id": "ev_861e1da508",
+          "level": "MERCHANT_CONFIRMED",
+          "summary": "Merchant-signed quote verified by gateway (SIMULATED merchant)",
+          "type": "merchant_quote"
+        }
+      ],
+      "execution_status": "DENIED",
+      "merchant_response": {
+        "key_id": "ccaf608e2adc2c50",
+        "payload": {
+          "cancellable": true,
+          "category": "Electronics",
+          "delivery_days": 3,
+          "free_returns": false,
+          "issued_at": "2026-11-03T15:01:33.876Z",
+          "merchant_id": "m_techmart",
+          "name": "Webcam, no free returns (synthetic)",
+          "product_id": "p_webcam",
+          "quote_id": "q_5a461caa229c",
+          "simulation": true,
+          "type": "quote",
+          "unit_price_krw": 59000
+        },
+        "payload_digest": "aae9e33038c3caf29a1d3de6f0994aee3ffb323bacda414bb4dcd6d30b3263a6",
+        "signature": "aa657878272ac04fec3a4a81be48286a8a5c4ed2fe5f47ada7c64ce09986814666bf471ae517021ddf7cc50235ee12aa1c415b6030ba55d0b1da673319d9b902"
+      },
+      "policy_decision": "DENY",
+      "policy_reason": {
+        "checks": [
+          {
+            "check": "delegation_valid",
+            "passed": true
+          },
+          {
+            "check": "delegation_not_expired",
+            "passed": true
+          },
+          {
+            "check": "agent_matches",
+            "passed": true
+          },
+          {
+            "check": "merchant_allowed",
+            "passed": true
+          },
+          {
+            "check": "product_found",
+            "passed": true
+          },
+          {
+            "check": "category_allowed",
+            "passed": true
+          },
+          {
+            "check": "per_item_limit",
+            "passed": true
+          },
+          {
+            "check": "budget_remaining",
+            "passed": true
+          },
+          {
+            "check": "free_returns",
+            "passed": false
+          },
+          {
+            "check": "delivery_deadline",
+            "passed": true
+          },
+          {
+            "check": "not_duplicate",
+            "passed": true
+          }
+        ],
+        "engine": "deterministic/1",
+        "violations": [
+          {
+            "code": "FREE_RETURNS_REQUIRED",
+            "message": "Free returns are required but not offered"
+          }
+        ]
+      },
+      "previous_hash": "893be6483d4a8135c1e05e752c7a041e31486c287ac3fdeaf94a1ba8c8eb9de1",
+      "receipt_id": "r_2bb0fba14f8f4adb",
+      "requested_action": "purchase",
+      "schema_version": "agenttrust.receipt/1",
+      "seq": 4,
+      "signature": "c5ba2b09c45caf5d991b581ce4b51d5e3f8418116dce1577956dca35c0bf57056e7282ad141d4da55c7f7e9f3cd033b53225b24f3bfdefaecdd9bb581ac9440f",
+      "signer_key_id": "52c92d3e34c7a19a",
+      "timestamp": "2026-11-03T15:01:33.876Z",
+      "transaction_id": "tx_4c5dd98d2b9f",
+      "verification_level": "MERCHANT_CONFIRMED"
+    },
+    {
+      "action_parameters": {
+        "claimed": {
+          "category": null,
+          "delivery_days": null,
+          "free_returns": null,
+          "unit_price_krw": null
+        },
+        "merchant_id": "m_gadgethub",
+        "product_id": "p_tablet",
+        "quantity": 1,
+        "rationale": "Tablet"
+      },
+      "agent_id": "agent_demo",
+      "current_hash": "eac84561d30d9d4d5aff6c45e2c6b5fa6f3edd5816a691f53a4c76b0f37fb458",
+      "delegation_id": "dlg_40977fe43a28",
+      "delegation_version": 1,
+      "event_type": "POLICY_DECISION",
+      "evidence_references": [
+        {
+          "digest": "81287ec148b9469235aa513cc3e99a4575ed8a3efd16c4bcca096ae7cf6dbcd7",
+          "evidence_id": "ev_11a0507515",
+          "level": "SELF_REPORTED",
+          "summary": "Agent-supplied claims and rationale (unverified)",
+          "type": "agent_claims"
+        },
+        {
+          "digest": "1dbf61673f29dbf9cb7a5c2d5847a8880d1e026698e5c87bab3b9b92a3fb7395",
+          "evidence_id": "ev_28410dd244",
+          "level": "GATEWAY_VERIFIED",
+          "summary": "Deterministic policy checks executed by the gateway",
+          "type": "policy_evaluation"
+        },
+        {
+          "digest": "eba43ac475dbe8e5adfff39af430d048b8f86e48e0b3d464ac737237b3698d09",
+          "evidence_id": "ev_ac842dbe62",
+          "level": "GATEWAY_VERIFIED",
+          "summary": "Delegation v1 loaded from gateway store",
+          "type": "delegation_snapshot"
+        },
+        {
+          "digest": "210f62dc7308e8821a9cf3067a86228fe953ba4a3fad56c0a6c0efd473f0d07f",
+          "evidence_id": "ev_46798d908f",
+          "level": "MERCHANT_CONFIRMED",
+          "summary": "Merchant-signed quote verified by gateway (SIMULATED merchant)",
+          "type": "merchant_quote"
+        }
+      ],
+      "execution_status": "AUTHORIZED",
+      "merchant_response": {
+        "key_id": "ccaf608e2adc2c50",
+        "payload": {
+          "cancellable": true,
+          "category": "Electronics",
+          "delivery_days": 3,
+          "free_returns": true,
+          "issued_at": "2026-11-03T15:01:33.879Z",
+          "merchant_id": "m_gadgethub",
+          "name": "Tablet, merchant overcharges (synthetic)",
+          "product_id": "p_tablet",
+          "quote_id": "q_722d159d2154",
+          "simulation": true,
+          "type": "quote",
+          "unit_price_krw": 80000
+        },
+        "payload_digest": "210f62dc7308e8821a9cf3067a86228fe953ba4a3fad56c0a6c0efd473f0d07f",
+        "signature": "37da2f4bde9dae2fe4bdf83f42b147454e980fb46a872dd7c936279b1660f2962fc8440e19222425ae4826a65d82ffa30c51f280a4ab2de50ad49778c6f69600"
+      },
+      "policy_decision": "ALLOW",
+      "policy_reason": {
+        "checks": [
+          {
+            "check": "delegation_valid",
+            "passed": true
+          },
+          {
+            "check": "delegation_not_expired",
+            "passed": true
+          },
+          {
+            "check": "agent_matches",
+            "passed": true
+          },
+          {
+            "check": "merchant_allowed",
+            "passed": true
+          },
+          {
+            "check": "product_found",
+            "passed": true
+          },
+          {
+            "check": "category_allowed",
+            "passed": true
+          },
+          {
+            "check": "per_item_limit",
+            "passed": true
+          },
+          {
+            "check": "budget_remaining",
+            "passed": true
+          },
+          {
+            "check": "free_returns",
+            "passed": true
+          },
+          {
+            "check": "delivery_deadline",
+            "passed": true
+          },
+          {
+            "check": "not_duplicate",
+            "passed": true
+          }
+        ],
+        "engine": "deterministic/1",
+        "violations": []
+      },
+      "previous_hash": "75182b5729c08176aef0b057b9e3f6d8598f6cfd5f6726edb94fff19b0c8d7be",
+      "receipt_id": "r_1d418357f2184a95",
+      "requested_action": "purchase",
+      "schema_version": "agenttrust.receipt/1",
+      "seq": 5,
+      "signature": "384fdf9d4db236e94637a06c665e633b9101c333c2d6b331abe705bffde0c060509c509e6c91ce6fb3f2c82b7262f336964ee2a680d382b432fa23e098d0dd06",
+      "signer_key_id": "52c92d3e34c7a19a",
+      "timestamp": "2026-11-03T15:01:33.880Z",
+      "transaction_id": "tx_96c514615daa",
+      "verification_level": "MERCHANT_CONFIRMED"
+    },
+    {
+      "action_parameters": {
+        "merchant_id": "m_gadgethub",
+        "product_id": "p_tablet",
+        "quantity": 1
+      },
+      "agent_id": "agent_demo",
+      "current_hash": "50253df684e897026d05c840c7ed18bbbf3ab9e9bc04ffbacd6ea86b2e09f1dd",
+      "delegation_id": "dlg_40977fe43a28",
+      "delegation_version": 1,
+      "event_type": "EXECUTION_RESULT",
+      "evidence_references": [
+        {
+          "digest": "677d2a518cd50f7492d238703a48f6eec918ac51f51e143f0f35c96a6d4ee401",
+          "evidence_id": "ev_d86e8ecf06",
+          "level": "MERCHANT_CONFIRMED",
+          "summary": "Merchant-signed order confirmation (SIMULATED; not a payment confirmation)",
+          "type": "merchant_order_confirmation"
+        }
+      ],
+      "execution_status": "EXECUTED_WITH_DISCREPANCY",
+      "merchant_response": {
+        "key_id": "ccaf608e2adc2c50",
+        "payload": {
+          "charged_krw": 95000,
+          "issued_at": "2026-11-03T15:01:33.880Z",
+          "merchant_id": "m_gadgethub",
+          "order_id": "o_cec7fafc5f69",
+          "product_id": "p_tablet",
+          "quantity": 1,
+          "simulation": true,
+          "status": "CONFIRMED",
+          "transaction_ref": "tx_96c514615daa",
+          "type": "order_confirmation"
+        },
+        "payload_digest": "677d2a518cd50f7492d238703a48f6eec918ac51f51e143f0f35c96a6d4ee401",
+        "signature": "b79f39eeaf166429db9b7076fb9559a0b5e375fb60c61535086afaa7babb8352f95ee3c0dc3e69b60a83e0e80c55545331c346dca07dcdcd297ce29347545609"
+      },
+      "policy_decision": "ALLOW",
+      "policy_reason": {
+        "discrepancies": [
+          {
+            "expected": 80000,
+            "expected_source": "MERCHANT_CONFIRMED (signed quote)",
+            "field": "charged_krw",
+            "observed": 95000,
+            "observed_source": "MERCHANT_CONFIRMED (signed order confirmation)",
+            "stage": "MERCHANT_EXECUTION"
+          }
+        ]
+      },
+      "previous_hash": "eac84561d30d9d4d5aff6c45e2c6b5fa6f3edd5816a691f53a4c76b0f37fb458",
+      "receipt_id": "r_2a4f1e751f9f4f3e",
+      "requested_action": "purchase",
+      "schema_version": "agenttrust.receipt/1",
+      "seq": 6,
+      "signature": "cb775f223de98a332c5e6dc7e3239651435910d92543aa71bdc596803a5854ea3f274a9f5fade2a07f70dc292e34f0fc7d12d456f2004e8130ff5154910b4a06",
+      "signer_key_id": "52c92d3e34c7a19a",
+      "timestamp": "2026-11-03T15:01:33.881Z",
+      "transaction_id": "tx_96c514615daa",
+      "verification_level": "MERCHANT_CONFIRMED"
+    },
+    {
+      "action_parameters": {
+        "claimed": {
+          "category": null,
+          "delivery_days": null,
+          "free_returns": null,
+          "unit_price_krw": null
+        },
+        "merchant_id": "m_techmart",
+        "product_id": "p_cable",
+        "quantity": 1,
+        "rationale": "Cable"
+      },
+      "agent_id": "agent_demo",
+      "current_hash": "eda1cc41c9fc666dc06a73825dc77405eb6c37d9411bfc0ca06895fb0cd593d4",
+      "delegation_id": "dlg_40977fe43a28",
+      "delegation_version": 1,
+      "event_type": "POLICY_DECISION",
+      "evidence_references": [
+        {
+          "digest": "76bbb5c8c1543f2bc0eea832cdfb897a10b83c6d9f1d07c49ef7f6b3e1ed4764",
+          "evidence_id": "ev_87afc398da",
+          "level": "SELF_REPORTED",
+          "summary": "Agent-supplied claims and rationale (unverified)",
+          "type": "agent_claims"
+        },
+        {
+          "digest": "1dbf61673f29dbf9cb7a5c2d5847a8880d1e026698e5c87bab3b9b92a3fb7395",
+          "evidence_id": "ev_7333361f11",
+          "level": "GATEWAY_VERIFIED",
+          "summary": "Deterministic policy checks executed by the gateway",
+          "type": "policy_evaluation"
+        },
+        {
+          "digest": "eba43ac475dbe8e5adfff39af430d048b8f86e48e0b3d464ac737237b3698d09",
+          "evidence_id": "ev_d0cf195101",
+          "level": "GATEWAY_VERIFIED",
+          "summary": "Delegation v1 loaded from gateway store",
+          "type": "delegation_snapshot"
+        },
+        {
+          "digest": "348dff390589060cb6b61b67e39a2b410885a290446ba2c8d6586f4b582346ce",
+          "evidence_id": "ev_971b2a550d",
+          "level": "MERCHANT_CONFIRMED",
+          "summary": "Merchant-signed quote verified by gateway (SIMULATED merchant)",
+          "type": "merchant_quote"
+        }
+      ],
+      "execution_status": "AUTHORIZED",
+      "merchant_response": {
+        "key_id": "ccaf608e2adc2c50",
+        "payload": {
+          "cancellable": true,
+          "category": "Electronics",
+          "delivery_days": 2,
+          "free_returns": true,
+          "issued_at": "2026-11-03T15:01:33.883Z",
+          "merchant_id": "m_techmart",
+          "name": "USB-C Cable (synthetic)",
+          "product_id": "p_cable",
+          "quote_id": "q_16b9d679dbd7",
+          "simulation": true,
+          "type": "quote",
+          "unit_price_krw": 15000
+        },
+        "payload_digest": "348dff390589060cb6b61b67e39a2b410885a290446ba2c8d6586f4b582346ce",
+        "signature": "5637b11aeb8f6a4194e1bb38b4ef2359b5935e3a375997f8d3c292d0cd1f87ab8b4bfae312c9fc5e65bed4cef08aafd084af5ada70665de13a798139685dfc0e"
+      },
+      "policy_decision": "ALLOW",
+      "policy_reason": {
+        "checks": [
+          {
+            "check": "delegation_valid",
+            "passed": true
+          },
+          {
+            "check": "delegation_not_expired",
+            "passed": true
+          },
+          {
+            "check": "agent_matches",
+            "passed": true
+          },
+          {
+            "check": "merchant_allowed",
+            "passed": true
+          },
+          {
+            "check": "product_found",
+            "passed": true
+          },
+          {
+            "check": "category_allowed",
+            "passed": true
+          },
+          {
+            "check": "per_item_limit",
+            "passed": true
+          },
+          {
+            "check": "budget_remaining",
+            "passed": true
+          },
+          {
+            "check": "free_returns",
+            "passed": true
+          },
+          {
+            "check": "delivery_deadline",
+            "passed": true
+          },
+          {
+            "check": "not_duplicate",
+            "passed": true
+          }
+        ],
+        "engine": "deterministic/1",
+        "violations": []
+      },
+      "previous_hash": "50253df684e897026d05c840c7ed18bbbf3ab9e9bc04ffbacd6ea86b2e09f1dd",
+      "receipt_id": "r_1cd861505bd243fb",
+      "requested_action": "purchase",
+      "schema_version": "agenttrust.receipt/1",
+      "seq": 7,
+      "signature": "a06c38fa2f88cb5cbf340cdba05bcf3fc6dcd9f3466fcf573e88a0a8abc2fe116879b624aee91189665300b768b6f531107a61c420542dde811f0934d6b5790a",
+      "signer_key_id": "52c92d3e34c7a19a",
+      "timestamp": "2026-11-03T15:01:33.884Z",
+      "transaction_id": "tx_d5bfda817c30",
+      "verification_level": "MERCHANT_CONFIRMED"
+    },
+    {
+      "action_parameters": {
+        "merchant_id": "m_techmart",
+        "product_id": "p_cable",
+        "quantity": 1
+      },
+      "agent_id": "agent_demo",
+      "current_hash": "a77ad959e440a09daa9e2c493cb02414d4e3948dab3a4cbc21994e66bcafd27b",
+      "delegation_id": "dlg_40977fe43a28",
+      "delegation_version": 1,
+      "event_type": "EXECUTION_RESULT",
+      "evidence_references": [
+        {
+          "digest": "7c942174923c04a1debb1659f69acb68d423c834290667e0d5f0076ec52a12d7",
+          "evidence_id": "ev_c1e5a00c8a",
+          "level": "MERCHANT_CONFIRMED",
+          "summary": "Merchant-signed order confirmation (SIMULATED; not a payment confirmation)",
+          "type": "merchant_order_confirmation"
+        }
+      ],
+      "execution_status": "EXECUTED",
+      "merchant_response": {
+        "key_id": "ccaf608e2adc2c50",
+        "payload": {
+          "charged_krw": 15000,
+          "issued_at": "2026-11-03T15:01:33.885Z",
+          "merchant_id": "m_techmart",
+          "order_id": "o_aa880705f72d",
+          "product_id": "p_cable",
+          "quantity": 1,
+          "simulation": true,
+          "status": "CONFIRMED",
+          "transaction_ref": "tx_d5bfda817c30",
+          "type": "order_confirmation"
+        },
+        "payload_digest": "7c942174923c04a1debb1659f69acb68d423c834290667e0d5f0076ec52a12d7",
+        "signature": "1985b8a703bfa42bc4f85b70b35d998e41991a07f9fa02094ea2322f13ae7527c010d128d167a78f14fae6eab1627e5c094031d31ef767de4d0b1ea8e8a99a0f"
+      },
+      "policy_decision": "ALLOW",
+      "policy_reason": {
+        "discrepancies": []
+      },
+      "previous_hash": "eda1cc41c9fc666dc06a73825dc77405eb6c37d9411bfc0ca06895fb0cd593d4",
+      "receipt_id": "r_01284272b8794d83",
+      "requested_action": "purchase",
+      "schema_version": "agenttrust.receipt/1",
+      "seq": 8,
+      "signature": "6d652c497136e8a58afe82c96bcce2575b9776d0b7198f37b7ddd99654eaced312dca7bb4f1c528fc116ee82d8e7ce32d70f7e9052928a0e2c07db4aeb6c0005",
+      "signer_key_id": "52c92d3e34c7a19a",
+      "timestamp": "2026-11-03T15:01:33.885Z",
+      "transaction_id": "tx_d5bfda817c30",
+      "verification_level": "MERCHANT_CONFIRMED"
+    },
+    {
+      "action_parameters": {
+        "order_id": "o_aa880705f72d",
+        "reason": "Simulated user cancellation"
+      },
+      "agent_id": "agent_demo",
+      "current_hash": "9f58a262ec9833b5de7d9b72cf99fe438a0f0010148451ed8d32076bab04c0f9",
+      "delegation_id": "dlg_40977fe43a28",
+      "delegation_version": 1,
+      "event_type": "CANCEL_REQUESTED",
+      "evidence_references": [
+        {
+          "digest": "f117f8f32c7957d271254778faffc85cfd0e9e41ba627ab0f27468cf0c4401ad",
+          "evidence_id": "ev_5700cb8819",
+          "level": "SELF_REPORTED",
+          "summary": "User-stated reason (unverified)",
+          "type": "cancel_reason"
+        }
+      ],
+      "execution_status": "CANCEL_REQUESTED",
+      "merchant_response": null,
+      "policy_decision": "ALLOW",
+      "policy_reason": {
+        "note": "user cancellation request"
+      },
+      "previous_hash": "a77ad959e440a09daa9e2c493cb02414d4e3948dab3a4cbc21994e66bcafd27b",
+      "receipt_id": "r_e0f31d1f68514fba",
+      "requested_action": "cancel",
+      "schema_version": "agenttrust.receipt/1",
+      "seq": 9,
+      "signature": "77380cc5ef887f8a27bf018aab12e7d4bfa97c481bf7378ca1a8d8d346a88dda7cc707a197912b474002fb7cc5d0d2e0e030559d478251dff743ff5b407bb301",
+      "signer_key_id": "52c92d3e34c7a19a",
+      "timestamp": "2026-11-03T15:01:33.886Z",
+      "transaction_id": "tx_d5bfda817c30",
+      "verification_level": "SELF_REPORTED"
+    },
+    {
+      "action_parameters": {
+        "order_id": "o_aa880705f72d"
+      },
+      "agent_id": "agent_demo",
+      "current_hash": "bfe43768c991dcad6cc3fa958eaeb565f1a813cb61662d52cc88a73556120e4b",
+      "delegation_id": "dlg_40977fe43a28",
+      "delegation_version": 1,
+      "event_type": "CANCEL_APPROVED",
+      "evidence_references": [
+        {
+          "digest": "831b8d4a2a9268e66aca6f34345a34b48881f4f1218ed91afed869e3dd7b9c5d",
+          "evidence_id": "ev_0b48940921",
+          "level": "MERCHANT_CONFIRMED",
+          "summary": "Merchant-signed cancellation response (SIMULATED)",
+          "type": "merchant_cancellation"
+        }
+      ],
+      "execution_status": "CANCEL_APPROVED",
+      "merchant_response": {
+        "key_id": "ccaf608e2adc2c50",
+        "payload": {
+          "issued_at": "2026-11-03T15:01:33.886Z",
+          "order_id": "o_aa880705f72d",
+          "reason_code": "OK",
+          "simulation": true,
+          "status": "CANCEL_APPROVED",
+          "type": "cancellation"
+        },
+        "payload_digest": "831b8d4a2a9268e66aca6f34345a34b48881f4f1218ed91afed869e3dd7b9c5d",
+        "signature": "97171dd82e7c4da35782c8b589733349a615c560a4309094e2463890fdeb41d3421cc0922a179c424c1643cc565fb2c092f8241fe1c83823371ed599bd4d5c01"
+      },
+      "policy_decision": "ALLOW",
+      "policy_reason": {
+        "merchant_reason_code": "OK"
+      },
+      "previous_hash": "9f58a262ec9833b5de7d9b72cf99fe438a0f0010148451ed8d32076bab04c0f9",
+      "receipt_id": "r_8f038c093eb84115",
+      "requested_action": "cancel",
+      "schema_version": "agenttrust.receipt/1",
+      "seq": 10,
+      "signature": "983ae7674d801f6795337bdf02b80c85d7d703103c4ada87ce0c1d924faebb224ef7ce949b6cf8e27a377d2ed828aee4f841235ece8e0b3264e05be2e3c3cb0d",
+      "signer_key_id": "52c92d3e34c7a19a",
+      "timestamp": "2026-11-03T15:01:33.887Z",
+      "transaction_id": "tx_d5bfda817c30",
+      "verification_level": "MERCHANT_CONFIRMED"
+    },
+    {
+      "action_parameters": {
+        "from": "EXECUTED",
+        "to": "CANCELLED"
+      },
+      "agent_id": "agent_demo",
+      "current_hash": "859c23086b98e5add370b40f430e126df954dabf77f7fdc4ab1a9569aab2e534",
+      "delegation_id": "dlg_40977fe43a28",
+      "delegation_version": 1,
+      "event_type": "TRANSACTION_STATE_CHANGED",
+      "evidence_references": [
+        {
+          "digest": null,
+          "evidence_id": "ev_62d7283f94",
+          "level": "GATEWAY_VERIFIED",
+          "summary": "EXECUTED -> CANCELLED after merchant approval",
+          "type": "state_change"
+        }
+      ],
+      "execution_status": "CANCELLED",
+      "merchant_response": null,
+      "policy_decision": "ALLOW",
+      "policy_reason": {},
+      "previous_hash": "bfe43768c991dcad6cc3fa958eaeb565f1a813cb61662d52cc88a73556120e4b",
+      "receipt_id": "r_466f44aafd15491e",
+      "requested_action": "state_change",
+      "schema_version": "agenttrust.receipt/1",
+      "seq": 11,
+      "signature": "52d1a2f7178aae926ff3fd9008087a390c002f7630525312b177435a9a57c80f2a9e5f3cf766f98a165f6801f7d5bc12fb06664b482dfda3b378c212c520f801",
+      "signer_key_id": "52c92d3e34c7a19a",
+      "timestamp": "2026-11-03T15:01:33.887Z",
+      "transaction_id": "tx_d5bfda817c30",
+      "verification_level": "GATEWAY_VERIFIED"
+    }
+  ],
+  "schema": "agenttrust.export/1"
+}
