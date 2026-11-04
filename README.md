@@ -1,4 +1,6 @@
-# AgentTrust — an independent trust layer for AI agent actions (research prototype)
+# AgentTrust
+
+**An independent AI Agent Trust Layer (AATL)** for verifying, recording and recovering AI agent actions. Research prototype.
 
 > **Local research prototype. All data is synthetic. The merchant is simulated. No real payments, cards, personal data or insurance. Not for production, not legal advice, and not a legal-responsibility decision-maker.**
 
